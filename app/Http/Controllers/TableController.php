@@ -20,31 +20,36 @@ class TableController extends Controller
         $list->title = $request->title;
 
     }
-    public function delli(Request $request)
+    public function delli(Request $request, $id)
     {
-
+        $request->user()->statuses()->findOrFail($id)->delete();
     }
 
-    public function modifli(Request $request)
+    public function renameli(Request $request, $id)
     {
-
+        $list = App\List::find($id);
+        $list->title = $request->title;
+        $list->save();
     }
 
     public function storecard(Request $request)
     {
         $card= new Card();
         $card->title = $request->title;
-        $card->message = $request ->message;
+        $card->message = $request->message;
         $card->save();
     }
-    public function delcard(Request $request)
+    public function delcard(Request $request ,$id)
     {
-
+        $request->user()->statuses()->findOrFail($id)->delete();
     }
 
-    public function modifcard(Request $request)
+    public function renamecard(Request $request, $id)
     {
-
+        $card = App\Card::find($id);
+        $card->title = $request->title;
+        $card->message = $request->message;
+        $card->save();
     }
 
     public function storecom(Request $request)
@@ -56,13 +61,16 @@ class TableController extends Controller
 
 
     }
-    public function delcom(Request $request)
+    public function delcom(Request $request,$id)
     {
-
+        $request->user()->statuses()->findOrFail($id)->delete();
     }
 
-    public function modifcom(Request $request)
+    public function renamecom(Request $request, $id)
     {
-
+        $com = App\Com::find($id);
+        $com->title = $request->title;
+        $com->message = $request->message;
+        $com->save();
     }
 }
