@@ -18,10 +18,30 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::post('/home', 'HomeController@store')->name('store.table');
+Route::post('/home', 'HomeController@del')->name('del.table');
+Route::post('/home', 'HomeController@modif')->name('modif.table');
 
 
 
 Route::get('/profil', 'ProfilController@profil')->name('profil');
+Route::post('/profil', 'ProfilController@store')->name('store.user');
+Route::post('/profil', 'ProfilController@del')->name('del.user');
+Route::post('/profil', 'ProfilController@modif')->name('modif.user');
+
+
+
 
 Route::get('/table', 'TableController@table')->name('table');
+
+Route::post('/table', 'TableController@storeli')->name('store.li');
+Route::post('/table', 'TableController@delli')->name('del.li');
+Route::post('/table', 'TableController@modifli')->name('modif.li');
+
+Route::post('/table', 'TableController@storecard')->name('store.card');
+Route::post('/table', 'TableController@delcard')->name('del.card');
+Route::post('/table', 'TableController@modifcard')->name('modif.card');
+
+Route::post('/table', 'TableController@storecom')->name('store.com');
+Route::post('/table', 'TableController@delcom')->name('del.com');
+Route::post('/table', 'TableController@modifcom')->name('modif.com');
