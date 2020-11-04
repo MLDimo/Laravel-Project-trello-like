@@ -1,11 +1,44 @@
 @extends('layouts.app')
+
 @section('content')
-<form>
-<input type="text" name="title" id="">
-<label for="title">Titre </label>
+    <div class='container'>
+        <div class="row">
+            <div class="col">
+                <h3>
+                Vos informations :
+                </h3>
+                <h4>
+                    Votre nom : {{ Auth::user()->name }}
 
-</form>
+                <br>
 
+                    Votre email : {{ Auth::user()->email }}
+                </h4>
+            </div>
+
+            <div class="col">
+
+                <h3>
+                    Entrez de nouvelles valeurs pour modifier :
+                </h3>
+                <h4>
+                    <form method="post" action="@route('rename.user')">
+
+                        <label for="name">Nom : </label>
+                        <input type="text" name="name" id="name">
+
+                        <br>
+
+                        <label for="email">Email :</label>
+                        <input type="text" name="email" id="email">
+
+                        <br>
+                    <input type="submit" value="modifier">
+                    </form>
+                </h4>
+            </div>
+        </div>
+    </div>
 @endsection
 
 

@@ -25,8 +25,6 @@ Route::post('/home', 'HomeController@rename')->name('rename.table');
 
 
 Route::get('/profil', 'ProfilController@profil')->name('profil');
-Route::post('/profil', 'ProfilController@store')->name('store.user');
-Route::post('/profil', 'ProfilController@del')->name('del.user');
 Route::post('/profil', 'ProfilController@rename')->name('rename.user');
 
 
