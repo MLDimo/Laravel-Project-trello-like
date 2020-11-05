@@ -11,7 +11,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        @foreach ($collection as $item)
+        @foreach ($table as $item)
         <div class="col-3-sm">
 
         </div>
