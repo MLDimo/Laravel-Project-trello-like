@@ -23,6 +23,7 @@
                 </h3>
                 <h4>
                     <form method="post" action="@route('rename.user')">
+                        @csrf
 
                         <label for="name">Nom : </label>
                         <input type="text" name="name" id="name">

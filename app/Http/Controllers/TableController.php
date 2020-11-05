@@ -1,10 +1,13 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\List;
+
+
 use App\Card;
 use App\Com;
+use App\Liste;
 
 
 class TableController extends Controller
@@ -12,13 +15,13 @@ class TableController extends Controller
 
     public function table()
     {
+        // for each table id
         return view('table');
     }
     public function storeli(Request $request)
     {
-        $list= new List();
+        $list = new Liste();
         $list->title = $request->title;
-
     }
     public function delli(Request $request, $id)
     {
@@ -27,19 +30,19 @@ class TableController extends Controller
 
     public function renameli(Request $request, $id)
     {
-        $list = App\List::find($id);
+        $list = App\Liste::find($id);
         $list->title = $request->title;
         $list->save();
     }
 
     public function storecard(Request $request)
     {
-        $card= new Card();
+        $card = new Card();
         $card->title = $request->title;
-        $card->message = $request->message;
+        $card->content = $request->content;
         $card->save();
     }
-    public function delcard(Request $request ,$id)
+    public function delcard(Request $request, $id)
     {
         $request->user()->statuses()->findOrFail($id)->delete();
     }
@@ -48,20 +51,18 @@ class TableController extends Controller
     {
         $card = App\Card::find($id);
         $card->title = $request->title;
-        $card->message = $request->message;
+        $card->content = $request->content;
         $card->save();
     }
 
     public function storecom(Request $request)
     {
-        $com= new Com();
+        $com = new Com();
         $com->title = $request->title;
-        $com->message = $request ->message;
+        $com->message = $request->message;
         $com->save();
-
-
     }
-    public function delcom(Request $request,$id)
+    public function delcom(Request $request, $id)
     {
         $request->user()->statuses()->findOrFail($id)->delete();
     }
