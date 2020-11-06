@@ -6,7 +6,7 @@
     <div class="row">
         @foreach ($list as $item)
         <div class="col-3-sm">
-
+            <li>{{ $item->name }}</li>
         </div>
         @endforeach
     </div>
@@ -28,8 +28,12 @@
     @foreach ($card as $item)
         <div class="row">
             <div class="col-3-sm">
+<<<<<<< HEAD
                 yyooyoyoy
 
+=======
+                <li>{{ $item->name }}</li>
+>>>>>>> 06b89578c387f5e16c2ea62975bba9e032c40c87
             </div>
         </div>
     @endforeach
