@@ -33,6 +33,7 @@ class HomeController extends Controller
     {
         $table = new Table();
         $table->title = $request->title;
+        $table->description = $request->description;
         $table->save();
         return back();
     }
@@ -47,6 +48,7 @@ class HomeController extends Controller
         $id = auth()->id();
         $table = Table::find($id);
         $table->title = $request->title;
+        $table->description = $request->description;
         $table->save();
         return back();
     }
