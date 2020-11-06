@@ -13,19 +13,29 @@
         </div>
     </div>
 </div>
-
-<div class="container-fluid">
-    <div class="row">
+<div class="row">
         @foreach ($tables as $item)
-            <div class="col">
-                <h4> {{ $item->title }} </h4>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                <h4 class="card-title"> {{ $item->title }} </h4>
+                <h6 class="card-subtitle mb-2">{{}} description ici </h6>
+                <p class="card-text">{{}}commentaires ici</p>
+      <a href="#" class="card-link">Modifier</a>
+      <a href="#" class="card-link">Supprimer</a>
+            </div>
             </div>
         @endforeach
     </div>
 </div>
+</div>
 
 @endsection
+<style>
+    .card {
+        margin-left: 100px;
+    }
 
+</style>
 
 
 
