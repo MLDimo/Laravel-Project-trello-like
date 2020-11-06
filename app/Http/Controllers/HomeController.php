@@ -39,6 +39,7 @@ class HomeController extends Controller
     public function del(Request $request, $id)
     {
         $request->table()->statuses()->findOrFail($id)->delete();
+        return back();
     }
 
     public function rename(Request $request, $id)

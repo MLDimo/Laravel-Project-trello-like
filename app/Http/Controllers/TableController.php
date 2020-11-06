@@ -35,6 +35,7 @@ class TableController extends Controller
     public function delli(Request $request, $id)
     {
         $request->liste()->statuses()->findOrFail($id)->delete();
+        return back();
     }
 
     public function renameli(Request $request, $id)
@@ -58,6 +59,7 @@ class TableController extends Controller
     public function delcard(Request $request, $id)
     {
         $request->card()->statuses()->findOrFail($id)->delete();
+        return back();
     }
 
     public function renamecard(Request $request, $id)
@@ -81,6 +83,7 @@ class TableController extends Controller
     public function delcom(Request $request, $id)
     {
         $request->com()->statuses()->findOrFail($id)->delete();
+        return back();
     }
 
     public function renamecom(Request $request, $id)
