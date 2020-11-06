@@ -6,7 +6,7 @@
     <div class="row">
         @foreach ($list as $item)
         <div class="col-3-sm">
-
+            <li>{{ $item->name }}</li>
         </div>
         @endforeach
     </div>
@@ -28,7 +28,7 @@
     @foreach ($card as $item)
         <div class="row">
             <div class="col-3-sm">
-
+                <li>{{ $item->name }}</li>
             </div>
         </div>
     @endforeach

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Table;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home', [
+            'tables' => Table::all(),
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $table = new Table();
+        $table->title = $request->title;
+        $table->save();
+
     }
 }
