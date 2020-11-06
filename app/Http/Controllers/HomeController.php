@@ -36,4 +36,17 @@ class HomeController extends Controller
         $table->save();
         return back();
     }
+    public function del(Request $request, $id)
+    {
+        $request->table()->statuses()->findOrFail($id)->delete();
+    }
+
+    public function rename(Request $request, $id)
+    {
+        $id = auth()->id();
+        $table = Table::find($id);
+        $table->title = $request->title;
+        $table->save();
+        return back();
+    }
 }
