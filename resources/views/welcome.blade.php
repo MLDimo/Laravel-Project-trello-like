@@ -94,7 +94,7 @@
             <div class="content">
                 <div class="title m-b-md">
 
-                 Génial
+                  <h1> Génial </h1>
                 </div>
 
 
