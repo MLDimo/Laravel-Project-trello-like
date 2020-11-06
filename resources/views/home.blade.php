@@ -13,7 +13,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     You are logged in!
                 </div>
             </div>
@@ -39,7 +38,7 @@
                     <br><a type='submit' class='mld-card-a' name='$table' value='Voir' href=''>Voir</a><br><div class='gneu'></div>
                     <input type='hidden' value=".$table['id']." name='id'>
                 </div> --}}
-                <form action="@route('store.table')" method="POST">
+                <form  method="post" action="@route('store.table')">
 
 
                     @csrf

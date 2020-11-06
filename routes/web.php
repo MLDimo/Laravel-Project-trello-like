@@ -19,8 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/home', 'HomeController@store')->name('store.table');
-Route::post('/home', 'HomeController@del')->name('del.table');
-Route::post('/home', 'HomeController@rename')->name('rename.table');
+Route::post('/home/del', 'HomeController@del')->name('del.table');
+Route::post('/home/modif', 'HomeController@rename')->name('rename.table');
 
 
 
@@ -34,14 +34,15 @@ Route::post('/profil', 'ProfilController@rename')->name('rename.user');
 
 Route::get('/table', 'TableController@table')->name('table');
 
-Route::post('/table', 'TableController@storeli')->name('store.li');
-Route::post('/table', 'TableController@delli')->name('del.li');
-Route::post('/table', 'TableController@renameli')->name('rename.li');
 
-Route::post('/table', 'TableController@storecard')->name('store.card');
-Route::post('/table', 'TableController@delcard')->name('del.card');
-Route::post('/table', 'TableController@renamecard')->name('rename.card');
+Route::post('/table/liste', 'TableController@storeli')->name('store.li');
+Route::post('/table/del', 'TableController@delli')->name('del.li');
+Route::post('/table/modif', 'TableController@renameli')->name('rename.li');
 
-Route::post('/table', 'TableController@storecom')->name('store.com');
-Route::post('/table', 'TableController@delcom')->name('del.com');
-Route::post('/table', 'TableController@renamecom')->name('rename.com');
+Route::post('/table/card', 'TableController@storecard')->name('store.card');
+Route::post('/table/del', 'TableController@delcard')->name('del.card');
+Route::post('/table/modif', 'TableController@renamecard')->name('rename.card');
+
+Route::post('/table/com', 'TableController@storecom')->name('store.com');
+Route::post('/table/del', 'TableController@delcom')->name('del.com');
+Route::post('/table/modif', 'TableController@renamecom')->name('rename.com');

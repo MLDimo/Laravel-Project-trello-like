@@ -16,7 +16,12 @@ class TableController extends Controller
     public function table()
     {
         // for each table id
-        return view('table');
+        return view('table', [
+            'list' => Liste::all(),
+            'card' => Card::all(),
+            'com' => Com::all(),
+
+        ]);
     }
 
     public function storeli(Request $request)

@@ -1,12 +1,21 @@
+@extends('layouts.app')
 
+@section('content')
 
-  Hellow Darkness my old friend :
+<div class="container-fluid">
+    <div class="row">
+        @foreach ($list as $item)
+        <div class="col">
+            {{ $item->tittle }}
+        </div>
+    @endforeach
+    </div>
+</div>
 
-<<<<<<< HEAD
-<form method="POST" action="{{ @route('store.li') }}">
-=======
-<form method="POST" action="@route('store.li', [Auth::user()->id])">
-@csrf
+<form method="post" action="@route('store.li')">
+
+    @csrf
+    <label for="title">Titre de votre Liste</label>
     <input type="text" name="title" id="title">
     <input type="submit" value="+">
 
@@ -18,32 +27,35 @@
 
 
 <div class="container-fluid">
-    @foreach ($card as $item)
+     @foreach ($card as $item)
         <div class="row">
             <div class="col-3-sm">
-<<<<<<< HEAD
-                yyooyoyoy
-
-=======
-                <li>{{ $item->name }}</li>
->>>>>>> 06b89578c387f5e16c2ea62975bba9e032c40c87
+                {{ $item->tittle }}
             </div>
         </div>
     @endforeach
 </div>
 
-<form method="POST" action="@route('store.card')">
->>>>>>> ca6bce660e777af341f27d116c404387b968693d
+<form method="post" action="@route('store.card')">
     @csrf
-    <input type="number" name="user_id">
-    <input type="submit" value="Envoyer">
+    <label for="title" > Titre de votre Card</label>
+    <input type="text" name="title" id="title">
+
+    <input type="text" name="content" id="content" placeholder="Entrez le contenu de cette card">
+
+    <input type="submit" value="+">
+
 </form>
-<table>
-    <tr>
-        <td>
-
-        </td>
-    </tr>
-</table>
 
 
+<form method="post" action="@route('store.com')">
+@csrf
+    <label for="title" > Titre  de votre Com</label>
+    <input type="text" name="title" id="title">
+
+    <input type="text" name="message" id="message" placeholder="Entrez votre commentaire">
+
+    <input type="submit" value="ajouter">
+
+</form>
+@endsection
