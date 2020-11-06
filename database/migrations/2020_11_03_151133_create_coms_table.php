@@ -11,10 +11,13 @@ class CreateComsTable extends Migration
      *
      * @return void
      */
+
     public function up()
     {
         Schema::create('coms', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('message');
             $table->timestamps();
         });
     }
@@ -24,6 +27,7 @@ class CreateComsTable extends Migration
      *
      * @return void
      */
+
     public function down()
     {
         Schema::dropIfExists('coms');

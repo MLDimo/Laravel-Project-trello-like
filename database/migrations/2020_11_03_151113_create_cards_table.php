@@ -11,10 +11,13 @@ class CreateCardsTable extends Migration
      *
      * @return void
      */
+
     public function up()
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('content');
             $table->timestamps();
         });
     }
@@ -24,6 +27,7 @@ class CreateCardsTable extends Migration
      *
      * @return void
      */
+
     public function down()
     {
         Schema::dropIfExists('cards');

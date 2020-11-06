@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
+use App\Liste;
 use App\Card;
 use App\Com;
-use App\Liste;
+
 
 
 class TableController extends Controller
