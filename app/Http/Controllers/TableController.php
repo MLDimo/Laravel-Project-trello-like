@@ -18,11 +18,14 @@ class TableController extends Controller
         // for each table id
         return view('table');
     }
+
     public function storeli(Request $request)
     {
         $list = new Liste();
         $list->title = $request->title;
+        $list->save();
     }
+
     public function delli(Request $request, $id)
     {
         $request->user()->statuses()->findOrFail($id)->delete();
@@ -30,7 +33,8 @@ class TableController extends Controller
 
     public function renameli(Request $request, $id)
     {
-        $list = App\Liste::find($id);
+        $id = auth()->id();
+        $list = Liste::find($id);
         $list->title = $request->title;
         $list->save();
     }
@@ -49,7 +53,8 @@ class TableController extends Controller
 
     public function renamecard(Request $request, $id)
     {
-        $card = App\Card::find($id);
+        $id = auth()->id();
+        $card = Card::find($id);
         $card->title = $request->title;
         $card->content = $request->content;
         $card->save();
@@ -69,7 +74,8 @@ class TableController extends Controller
 
     public function renamecom(Request $request, $id)
     {
-        $com = App\Com::find($id);
+        $id = auth()->id();
+        $com = Com::find($id);
         $com->title = $request->title;
         $com->message = $request->message;
         $com->save();
