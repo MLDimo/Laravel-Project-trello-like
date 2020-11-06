@@ -40,9 +40,9 @@ Route::post('/table/del', 'TableController@delli')->name('del.li');
 Route::post('/table/modif', 'TableController@renameli')->name('rename.li');
 
 Route::post('/table/card', 'TableController@storecard')->name('store.card');
-Route::post('/table/del', 'TableController@delcard')->name('del.card');
-Route::post('/table/modif', 'TableController@renamecard')->name('rename.card');
+Route::post('/table/del/card', 'TableController@delcard')->name('del.card');
+Route::post('/table/modif/card', 'TableController@renamecard')->name('rename.card');
 
 Route::post('/table/com', 'TableController@storecom')->name('store.com');
-Route::post('/table/del', 'TableController@delcom')->name('del.com');
-Route::post('/table/modif', 'TableController@renamecom')->name('rename.com');
+Route::post('/table/del/com', 'TableController@delcom')->name('del.com');
+Route::post('/table/modif/com', 'TableController@renamecom')->name('rename.com');

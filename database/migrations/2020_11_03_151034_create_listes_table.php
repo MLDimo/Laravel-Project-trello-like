@@ -14,7 +14,9 @@ class CreateListesTable extends Migration
     public function up()
     {
         Schema::create('listes', function (Blueprint $table) {
+
             $table->bigIncrements('id');
+            $table->bigInteger('table_id')->index();
             $table->string('title');
             $table->timestamps();
         });

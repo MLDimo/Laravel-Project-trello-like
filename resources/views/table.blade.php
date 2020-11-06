@@ -45,7 +45,21 @@
 
                         </form>
                         --}}
+                       <div class="row">
+                           <div class="col-sm">
+                            <form method="post" action="@route('del.card'),['cardId' => $card->id]">
+                                <input type="submit" value="x">
+                                </form>
+                           </div>
+                            <div class="col-sm">
+                                <form method="post" action="@route('rename.card')">
+                                    <input type="submit" value="ø">
+                                </form>
+                            </div>
+                    </div>
                 </div>
+
+
             </div>
             <div class="row">
                 <div class="col">
