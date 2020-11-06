@@ -15,10 +15,7 @@ class CreateListesTable extends Migration
     {
         Schema::create('listes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email');
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('title');
             $table->timestamps();
         });
     }

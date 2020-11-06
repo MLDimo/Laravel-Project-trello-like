@@ -11,7 +11,6 @@ class CreateComsTable extends Migration
      *
      * @return void
      */
-
     public function up()
     {
         Schema::create('coms', function (Blueprint $table) {
@@ -27,7 +26,6 @@ class CreateComsTable extends Migration
      *
      * @return void
      */
-
     public function down()
     {
         Schema::dropIfExists('coms');

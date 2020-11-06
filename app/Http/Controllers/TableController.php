@@ -29,6 +29,7 @@ class TableController extends Controller
         $list = new Liste();
         $list->title = $request->title;
         $list->save();
+        return back();
     }
 
     public function delli(Request $request, $id)
@@ -42,6 +43,7 @@ class TableController extends Controller
         $list = Liste::find($id);
         $list->title = $request->title;
         $list->save();
+        return back();
     }
 
     public function storecard(Request $request)
@@ -50,7 +52,9 @@ class TableController extends Controller
         $card->title = $request->title;
         $card->content = $request->content;
         $card->save();
+        return back();
     }
+
     public function delcard(Request $request, $id)
     {
         $request->user()->statuses()->findOrFail($id)->delete();
@@ -63,6 +67,7 @@ class TableController extends Controller
         $card->title = $request->title;
         $card->content = $request->content;
         $card->save();
+        return back();
     }
 
     public function storecom(Request $request)
@@ -71,6 +76,7 @@ class TableController extends Controller
         $com->title = $request->title;
         $com->message = $request->message;
         $com->save();
+        return back();
     }
     public function delcom(Request $request, $id)
     {
@@ -84,5 +90,6 @@ class TableController extends Controller
         $com->title = $request->title;
         $com->message = $request->message;
         $com->save();
+        return back();
     }
 }

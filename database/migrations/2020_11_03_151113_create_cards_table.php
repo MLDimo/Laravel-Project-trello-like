@@ -11,7 +11,6 @@ class CreateCardsTable extends Migration
      *
      * @return void
      */
-
     public function up()
     {
         Schema::create('cards', function (Blueprint $table) {
@@ -27,7 +26,6 @@ class CreateCardsTable extends Migration
      *
      * @return void
      */
-
     public function down()
     {
         Schema::dropIfExists('cards');
