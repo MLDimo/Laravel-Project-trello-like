@@ -28,6 +28,7 @@
     @foreach ($card as $item)
         <div class="row">
             <div class="col-3-sm">
+                yyooyoyoy
 
             </div>
         </div>
