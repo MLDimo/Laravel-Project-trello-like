@@ -16,32 +16,31 @@
     </div>
 </div>
 
-<div class="container-fluid">
-    <div class="row">
-        @foreach ($tables as $item)
-            <div class="col-sm">
-                <div class="row">
-                    <h4> {{ $item->title }} </h4>
-                </div>
-                <div class="row">
-                    <div class="col-sm">
-                        <form method="post" action="@route('rename.table')">
-                        <input type="submit" value="ø">
-                        </form>
-                    </div>
-                    <div class="col-sm">
-                        <form method="post" action="@route('del.table')">
-                        <input type="submit" value="x">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    </div>
+
+<div class="row">
+    @foreach ($tables as $item)
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h4 class="card-title"> {{ $item->title }} </h4>
+            <h6 class="card-subtitle mb-2"> {{$item->description}} </h6>
+            <p class="card-text">commentaires ici</p>
+  <a href="#" class="card-link">Modifier</a>
+  <a href="#" class="card-link">Supprimer</a>
+        </div>
+        </div>
+    @endforeach
+</div>
+</div>
 </div>
 
 @endsection
+<style>
+.card {
+    margin-left: 95px;
+    margin-bottom: 50px;
+}
 
+</style>
 
 
 

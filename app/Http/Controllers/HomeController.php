@@ -33,6 +33,7 @@ class HomeController extends Controller
     {
         $table = new Table();
         $table->title = $request->title;
+        $table->description = $request->description;
         $table->save();
         return back();
     }
