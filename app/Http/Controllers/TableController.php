@@ -10,24 +10,31 @@ use App\Com;
 
 
 
+
+
 class TableController extends Controller
 {
 
-    public function table()
+    public function table($tableid)
     {
-        // for each table id
-        return view('table', [
-            'list' => Liste::all(),
-            'card' => Card::all(),
-            'com' => Com::all(),
 
-        ]);
+        return view(
+            'table',
+            [
+                'list' => Liste::where('table_id', $tableid)->get(), //MERCI THIBAULT pour le ->get()
+                'card' => Card::all(),
+                'com' => Com::all(),
+            ]
+        );
     }
 
-    public function storeli(Request $request)
+    public function storeli(Request $request, $tableid)
     {
+
         $list = new Liste();
+        $list->table_id = $tableid;
         $list->title = $request->title;
+        $listid = $list->id;
         $list->save();
         return back();
     }
@@ -47,9 +54,10 @@ class TableController extends Controller
         return back();
     }
 
-    public function storecard(Request $request)
+    public function storecard(Request $request, $listid)
     {
         $card = new Card();
+        $card->liste_id = $listid;
         $card->title = $request->title;
         $card->content = $request->content;
         $card->save();
@@ -72,9 +80,10 @@ class TableController extends Controller
         return back();
     }
 
-    public function storecom(Request $request)
+    public function storecom(Request $request, $cardid)
     {
         $com = new Com();
+        $com->card_id = $cardid;
         $com->title = $request->title;
         $com->message = $request->message;
         $com->save();

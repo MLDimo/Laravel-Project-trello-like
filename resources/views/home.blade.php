@@ -15,21 +15,23 @@
         </div>
     </div>
 </div>
-
-
 <div class="row">
-    @foreach ($tables as $item)
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-            <h4 class="card-title"> {{ $item->title }} </h4>
-            <h6 class="card-subtitle mb-2"> {{$item->description}} </h6>
-            <p class="card-text">commentaires ici</p>
-  <a href="#" class="card-link">Modifier</a>
-  <a href="#" class="card-link">Supprimer</a>
-        </div>
-        </div>
-    @endforeach
-</div>
+        @foreach ($tables as $item)
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                <h4 class="card-title"> {{ $item->title }} </h4>
+                <h6 class="card-subtitle mb-2"> {{$item->description}} </h6>
+
+<form method="post">
+      <a href="@route('rename.table')" class="card-link">Modifier</a>
+      <a href="@route('del.table')" class="card-link">Supprimer</a>
+      <a href="@route('table',[$item->id])" class="card-link">Voir</a>
+</form>
+
+            </div>
+            </div>
+        @endforeach
+    </div>
 </div>
 </div>
 
@@ -39,6 +41,10 @@
     margin-left: 95px;
     margin-bottom: 50px;
 }
+    .card {
+        margin-left: 95px;
+        margin-bottom: 50px;
+    }
 
 </style>
 
