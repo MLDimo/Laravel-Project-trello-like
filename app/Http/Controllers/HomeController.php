@@ -40,9 +40,10 @@ class HomeController extends Controller
         $table->save();
         return view('home', ['tables' => Table::where('user_id', Auth::user()->id)->get()]);
     }
-    public function del(Request $request, $tableid)
+    public function del(Request $request, $table)
     {
-        $request->table()->statuses()->findOrFail($tableid)->delete();
+        Table::where('id', $table)->delete();
+        // $request->table()->statuses()->findOrFail($tableid)->delete();
         return back();
     }
 

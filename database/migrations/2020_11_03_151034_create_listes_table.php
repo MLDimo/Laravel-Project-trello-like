@@ -18,6 +18,8 @@ class CreateListesTable extends Migration
             $table->bigInteger('table_id');
             $table->string('title');
             $table->timestamps();
+            $table->foreign('table_id')->references('id')->on('tables')->onDelete('cascade');
+
         });
     }
 

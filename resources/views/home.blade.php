@@ -24,7 +24,7 @@
 
 <form method="post">
       <a href="@route('rename.table')" class="card-link">Modifier</a>
-      <a href="@route('del.table')" class="card-link">Supprimer</a>
+      <a href="@route('del.table',[$item->id])" class="card-link">Supprimer</a>
       <a href="@route('table',[$item->id])" class="card-link">Voir</a>
 </form>
 
