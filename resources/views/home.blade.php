@@ -21,7 +21,6 @@
                 <div class="card-body">
                 <h4 class="card-title"> {{ $item->title }} </h4>
                 <h6 class="card-subtitle mb-2"> {{$item->description}} </h6>
-                <p class="card-text">commentaires ici</p>
       <a href="#" class="card-link">Modifier</a>
       <a href="#" class="card-link">Supprimer</a>
             </div>
