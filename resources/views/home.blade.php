@@ -21,8 +21,18 @@
                 <div class="card-body">
                 <h4 class="card-title"> {{ $item->title }} </h4>
                 <h6 class="card-subtitle mb-2"> {{$item->description}} </h6>
+<<<<<<< HEAD
       <a href="#" class="card-link">Modifier</a>
       <a href="#" class="card-link">Supprimer</a>
+=======
+
+<form method="post">
+      <a href="@route('rename.table')" class="card-link">Modifier</a>
+      <a href="@route('del.table')" class="card-link">Supprimer</a>
+      <a href="@route('table',[$item->id])" class="card-link">Voir</a>
+</form>
+
+>>>>>>> 79e5863127eb79f56dfb7609f3f5c959f93ae858
             </div>
             </div>
         @endforeach
@@ -32,6 +42,10 @@
 
 @endsection
 <style>
+.card {
+    margin-left: 95px;
+    margin-bottom: 50px;
+}
     .card {
         margin-left: 95px;
         margin-bottom: 50px;

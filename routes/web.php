@@ -32,12 +32,12 @@ Route::post('/profil', 'ProfilController@rename')->name('rename.user');
 
 
 
-Route::get('/table', 'TableController@table')->name('table');
+Route::get('/table/{tableid}', 'TableController@table')->name('table');
 
 
-Route::post('/table/liste', 'TableController@storeli')->name('store.li');
-Route::post('/table/del', 'TableController@delli')->name('del.li');
-Route::post('/table/modif', 'TableController@renameli')->name('rename.li');
+Route::post('/table/{tableid}', 'TableController@storeli')->name('store.li');
+Route::post('/table/del/{id_table}', 'TableController@delli')->name('del.li');
+Route::post('/table/modif/{id_table}', 'TableController@renameli')->name('rename.li');
 
 Route::post('/table/card', 'TableController@storecard')->name('store.card');
 Route::post('/table/del/card', 'TableController@delcard')->name('del.card');

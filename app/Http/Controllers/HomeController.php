@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Table;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,25 +26,27 @@ class HomeController extends Controller
     public function index()
     {
         return view('home', [
-            'tables' => Table::all(),
+            'tables' => Table::where('user_id', Auth::user()->id)->get()
         ]);
     }
 
     public function store(Request $request)
     {
+        $user = auth()->user();
         $table = new Table();
+        $table->user_id = $user->id;
         $table->title = $request->title;
         $table->description = $request->description;
         $table->save();
-        return back();
+        return view('home', ['tables' => Table::where('user_id', Auth::user()->id)->get()]);
     }
-    public function del(Request $request, $id)
+    public function del(Request $request, $tableid)
     {
-        $request->table()->statuses()->findOrFail($id)->delete();
+        $request->table()->statuses()->findOrFail($tableid)->delete();
         return back();
     }
 
-    public function rename(Request $request, $id)
+    public function rename(Request $request, $tableid)
     {
         $id = auth()->id();
         $table = Table::find($id);

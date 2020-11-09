@@ -7,14 +7,25 @@
     <div class="row">
         <div class="col">
 
-            <form method="post" action="@route('store.li')">
+
+            {{-- <form method="post" action="@route('store.li',[$item->table_id])"> --}}
+
+
+
+@foreach ($list as $item)
+
+        <form method="post" action="@route('store.li',[$item->table_id])">
+
+@endforeach
 
                 @csrf
                 <label for="title"><h2> Ajouter une nouvelle liste  : </h2></label>
                 <input type="text" name="title" id="title" placeholder="Titre">
                 <input type="submit" value="+">
 
+
             </form>
+
         </div>
     </div>
 </div>
@@ -47,7 +58,7 @@
                         --}}
                        <div class="row">
                            <div class="col-sm">
-                            <form method="post" action="@route('del.card'),['cardId' => $card->id]">
+                            <form method="post" action="@route('del.card'),,['$listeid'])">
                                 <input type="submit" value="x">
                                 </form>
                            </div>
@@ -69,7 +80,12 @@
         @endforeach
         <div class="row">
             <div class="col">
-                <form method="post" action="@route('store.card')">
+                @foreach ($card as $item)
+
+
+                <form method="post" action="@route('store.card',[$item->liste_id])">
+
+                 @endforeach
                     @csrf
 
                     <input type="text" name="title" id="title" placeholder="Titre">
@@ -92,7 +108,7 @@
 
 
 
-<form method="post" action="@route('store.com')">
+{{-- <form method="post" action="@route('store.com')">
     @csrf
         <label for="title" > Titre  de votre Com</label>
         <input type="text" name="title" id="title">
@@ -101,7 +117,7 @@
 
         <input type="submit" value="ajouter">
 
-    </form>
+    </form> --}}
 
 
 
