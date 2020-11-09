@@ -16,7 +16,6 @@ class CreateComsTable extends Migration
         Schema::create('coms', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('card_id')->index();
-            $table->string('title');
             $table->string('message');
             $table->timestamps();
         });

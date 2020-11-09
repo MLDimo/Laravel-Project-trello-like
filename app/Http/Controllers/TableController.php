@@ -8,10 +8,6 @@ use App\Liste;
 use App\Card;
 use App\Com;
 
-
-
-
-
 class TableController extends Controller
 {
 
@@ -24,19 +20,27 @@ class TableController extends Controller
                 'list' => Liste::where('table_id', $tableid)->get(), //MERCI THIBAULT pour le ->get()
                 'card' => Card::all(),
                 'com' => Com::all(),
+
+                'table_id' => $tableid,
             ]
         );
     }
 
+    //LISTES
     public function storeli(Request $request, $tableid)
     {
-
         $list = new Liste();
         $list->table_id = $tableid;
         $list->title = $request->title;
-        $listid = $list->id;
         $list->save();
         return back();
+        // return view(
+        //     [
+        //         'list' => Liste::where('table_id', $tableid)->get(), //MERCI THIBAULT pour le ->get()
+        //         'card' => Card::where('list_id', $listid)->get(),
+        //         'com' => Com::all(),
+        //     ]
+        // );
     }
 
     public function delli(Request $request, $id)
@@ -54,6 +58,8 @@ class TableController extends Controller
         return back();
     }
 
+
+    //CARDS
     public function storecard(Request $request, $listid)
     {
         $card = new Card();
@@ -62,6 +68,12 @@ class TableController extends Controller
         $card->content = $request->content;
         $card->save();
         return back();
+        // return view(
+        //     [
+        //         'card' => Card::where('list_id', $listid)->get(),
+        //         'com' => Com::where('card_id', $cardid)->get(),
+        //     ]
+        // );
     }
 
     public function delcard(Request $request, $id)
@@ -80,11 +92,12 @@ class TableController extends Controller
         return back();
     }
 
+
+    //COMS
     public function storecom(Request $request, $cardid)
     {
         $com = new Com();
         $com->card_id = $cardid;
-        $com->title = $request->title;
         $com->message = $request->message;
         $com->save();
         return back();
@@ -105,3 +118,7 @@ class TableController extends Controller
         return back();
     }
 }
+
+// \App\Liste::find(4)->card->each(function ($card) {
+//     echo $card->name, '<br>';
+// });

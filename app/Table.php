@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Table extends Model
 {
-    public function orders()
+    public function liste()
     {
         return $this->hasMany('App\Liste');
     }
