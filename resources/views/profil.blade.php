@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class='container'>
+    <div class='container-fluid profile-content'>
         <div class="row">
             <div class="col">
                 <h3>
@@ -25,7 +25,7 @@
                     <form method="post" action="@route('rename.user')">
                         @csrf
 
-                        <label for="name">Nom : </label>
+                        <label for="name"> Nom : </label>
                         <input type="text" name="name" id="name">
 
                         <br>
@@ -40,6 +40,17 @@
             </div>
         </div>
     </div>
+</div>
+    <style>
+        .profile-content {
+            background-color: rgb(168, 167, 110);
+            height: 686px;
+        }
+
+.col {
+    text-align: center;
+}
+        </style>
 @endsection
 
 

@@ -31,18 +31,20 @@ Route::post('/profil', 'ProfilController@rename')->name('rename.user');
 
 
 
+// Route for TABLE BLADE
+Route::get('/table/{id_table}', 'TableController@table')->name('table');
 
-Route::get('/table/{tableid}', 'TableController@table')->name('table');
-
-
-Route::post('/table/{tableid}', 'TableController@storeli')->name('store.li');
+// Route for LISTES
+Route::post('/table/{id_table}', 'TableController@storeli')->name('store.li');
 Route::post('/table/del/{id_table}', 'TableController@delli')->name('del.li');
 Route::post('/table/modif/{id_table}', 'TableController@renameli')->name('rename.li');
 
-Route::post('/table/card', 'TableController@storecard')->name('store.card');
+// Route for CARDS
+Route::post('/table/card/{id_liste}', 'TableController@storecard')->name('store.card');
 Route::post('/table/del/card', 'TableController@delcard')->name('del.card');
 Route::post('/table/modif/card', 'TableController@renamecard')->name('rename.card');
 
-Route::post('/table/com', 'TableController@storecom')->name('store.com');
+// Route for COMS
+Route::post('/table/com/{id_card}', 'TableController@storecom')->name('store.com');
 Route::post('/table/del/com', 'TableController@delcom')->name('del.com');
 Route::post('/table/modif/com', 'TableController@renamecom')->name('rename.com');

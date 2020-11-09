@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Liste extends Model
 {
-    public function orders()
+    public function card()
     {
         return $this->hasMany('App\Card');
     }
