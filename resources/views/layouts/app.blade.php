@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md shadow-sm mld-nav">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('Accueil', 'Accueil') }}
@@ -81,7 +81,18 @@
     </div>
     <style>
         body {
-        background-color: rgb(168, 167, 110);
+            background-image: url(../storage/assets/1.jpg);
+            background-size: cover;
+            color:black;
+
+        }
+
+        .mld-nav{
+            background-color: #201e20;
+
+        }
+        .mld-nav a{
+            color: #ddc3a5;
         }
     </style>
 </body>

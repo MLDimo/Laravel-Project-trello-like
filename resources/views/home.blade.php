@@ -4,7 +4,7 @@
 <div class="container-fluid lex-content">
 <div class="container-fluid">
     <div class="row">
-        <div class="col">
+        <div class="col mld-card">
                 <form  method="post" action="@route('store.table')">
                     @csrf
                     <label for="title"><h4> Créer un nouveau Tableau :</h4></label>
@@ -38,9 +38,12 @@
 </div>
 @endsection
 <style>
+
 .card {
     margin-left: 88px;
     margin-bottom: 50px;
+
+
 }
 .card-link1 {
     color: rgb(43, 86, 226);
@@ -72,18 +75,27 @@
 }
 .container-fluid {
     text-align: center;
+
+
 }
 h4 {
     color: rgb(0, 0, 0);
 }
 .py-4 {
-    background-color: rgb(168, 167, 110);
+
 }
 .col {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
+.card-body{
+    border:solid black 6px;
+    border-radius: 10px;
+    background-color: #fff;
+}
 </style>
+
 
 
 

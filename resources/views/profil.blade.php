@@ -42,10 +42,7 @@
     </div>
 </div>
     <style>
-        .profile-content {
-            background-color: rgb(168, 167, 110);
-            height: 686px;
-        }
+
 
 .col {
     text-align: center;

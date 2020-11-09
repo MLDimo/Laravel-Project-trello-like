@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
+
 @section('content')
 
-
+<div class="mld-bg">
 <div class="container-fluid">
     <div class="row">
         <div class="col">
@@ -25,8 +26,7 @@
             <div class="row">
                 <div class="col">
                     <b><h3> {{ $list_item->title }} </h3></b>
-                </div>
-            </div>
+
 
     @foreach ($card as $card_item)
     @if($list_item->id == $card_item->liste_id)
@@ -81,7 +81,8 @@
                 </form>
             </div>
         </div>
-
+    </div>
+</div>
         </div>
 @endforeach
     </div>
@@ -106,5 +107,13 @@
 
 
 
-
+<div class="mld-bg">
 @endsection
+
+<style>
+   body {
+            background-image: url(../storage/assets/1.jpg);
+            background-size: cover;
+            color:black;
+        }
+</style>

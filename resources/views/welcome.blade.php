@@ -13,8 +13,9 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: rgb(168, 167, 110);
-                color: #201e20;
+                background-image: url(storage/assets/1.jpg);
+                background-size: cover;
+                color:black;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
