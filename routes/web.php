@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/home', 'HomeController@store')->name('store.table');
-Route::post('/home/del', 'HomeController@del')->name('del.table');
+Route::get('/home/del/{table}', 'HomeController@del')->name('del.table');
 Route::post('/home/modif', 'HomeController@rename')->name('rename.table');
 
 

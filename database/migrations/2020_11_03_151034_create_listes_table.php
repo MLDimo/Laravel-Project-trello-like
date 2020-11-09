@@ -20,6 +20,7 @@ class CreateListesTable extends Migration
             // $table->foreign('table_id')->references('id')->on('tables')->onDelete('cascade');
 
             $table->timestamps();
+            $table->foreign('table_id')->references('id')->on('tables')->onDelete('cascade');
         });
     }
 

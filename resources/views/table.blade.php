@@ -22,11 +22,12 @@
 <div class="container-fluid">
     <div class="row">
 @foreach ($list as $list_item)
-        <div class="col">
+        <div class="col ">
             <div class="row">
                 <div class="col">
                     <b><h3> {{ $list_item->title }} </h3></b>
-
+                </div>
+            </div>
 
     @foreach ($card as $card_item)
     @if($list_item->id == $card_item->liste_id)
@@ -81,8 +82,7 @@
                 </form>
             </div>
         </div>
-    </div>
-</div>
+
         </div>
 @endforeach
     </div>

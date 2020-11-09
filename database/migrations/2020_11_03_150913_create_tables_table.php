@@ -19,6 +19,7 @@ class CreateTablesTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->timestamps();
+
         });
     }
 
@@ -30,5 +31,6 @@ class CreateTablesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('tables');
+        $table->delete('user_id');
     }
 }

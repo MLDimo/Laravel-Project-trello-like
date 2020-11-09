@@ -24,9 +24,9 @@
                 <h6 class="card-subtitle mb-2"> {{$item->description}} </h6>
 
 <form method="post">
-      <a href="@route('rename.table')" class="card-link1">Modifier</a>
-      <a href="@route('del.table')" class="card-link2">Supprimer</a>
-      <a href="@route('table',[$item->id])" class="card-link3">Voir</a>
+      <a href="@route('rename.table')" class="card-link">Modifier</a>
+      <a href="@route('del.table',[$item->id])" class="card-link">Supprimer</a>
+      <a href="@route('table',[$item->id])" class="card-link">Voir</a>
 </form>
 
             </div>
