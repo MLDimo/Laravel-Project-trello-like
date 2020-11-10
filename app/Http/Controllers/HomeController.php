@@ -46,7 +46,7 @@ class HomeController extends Controller
         return back();
     }
 
-    public function rename(Request $request, $tableid)
+    public function rename(Request $request)
     {
         $id = auth()->id();
         $table = Table::find($id);

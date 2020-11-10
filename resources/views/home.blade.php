@@ -24,10 +24,21 @@
                 <h6 class="card-subtitle mb-2"> {{$item->description}} </h6>
 
 <form method="post">
-      <a href="@route('rename.table')" class="card-link">Modifier</a>
-      <a href="@route('del.table',[$item->id])" class="card-link">Supprimer</a>
-      <a href="@route('table',[$item->id])" class="card-link">Voir</a>
+      <a href="@route('rename.table')" class="card-link1">Modifier</a>
+      <a href="@route('del.table',[$item->id])" class="card-link2">Supprimer</a>
+      <a href="@route('table',[$item->id])" class="card-link3">Voir</a>
 </form>
+
+
+
+
+
+{{-- <form method="post" action="@route('rename.table',[$item->id])">
+    @csrf
+    <input type="text" name="title" id="title" placeholder="modif nom tab">
+    <input type="text" name="description" id="description" placeholder="modif description tab">
+    <input type="submit" value="modif">
+</form> --}}
 
             </div>
             </div>
@@ -48,17 +59,17 @@
 .card-link1 {
     color: rgb(43, 86, 226);
     padding-left: 10px;
-    font-size: 20px;
+    font-size: 18px;
 }
 .card-link2 {
     color: crimson;
     padding-left: 10px;
-    font-size: 20px;
+    font-size: 18px;
 }
 .card-link3 {
     color: green;
     padding-left: 10px;
-    font-size: 20px;
+    font-size: 18px;
 }
 .card-title {
     color: rgb(0, 0, 0);
@@ -92,7 +103,9 @@ h4 {
 .card-body{
     border:solid black 6px;
     border-radius: 10px;
-    background-color: #fff;
+
+    background-image: url(../storage/assets/bg-tab.jpeg);
+
 }
 </style>
 
