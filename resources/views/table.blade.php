@@ -55,6 +55,10 @@
                     <div class="row">
                         <div class="col">
                             <h6> {{ $com_item->message }} </h6>
+                            <form method="post" action="@route('del.com',[$com_item->id])">
+                                @csrf
+                                <input type="submit" value="x">
+                                </form>
                         </div>
                     </div>
             @endforeach
