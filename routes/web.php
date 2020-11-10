@@ -41,10 +41,10 @@ Route::post('/table/modif/{id_table}', 'TableController@renameli')->name('rename
 
 // Route for CARDS
 Route::post('/table/card/{id_liste}', 'TableController@storecard')->name('store.card');
-Route::post('/table/del/card', 'TableController@delcard')->name('del.card');
-Route::post('/table/modif/card', 'TableController@renamecard')->name('rename.card');
+Route::post('/table/del/card/{id_liste}', 'TableController@delcard')->name('del.card');
+Route::post('/table/modif/card/{id_liste}', 'TableController@renamecard')->name('rename.card');
 
 // Route for COMS
 Route::post('/table/com/{id_card}', 'TableController@storecom')->name('store.com');
-Route::post('/table/del/com', 'TableController@delcom')->name('del.com');
-Route::post('/table/modif/com', 'TableController@renamecom')->name('rename.com');
+Route::post('/table/del/com/{id_card}', 'TableController@delcom')->name('del.com');
+Route::post('/table/modif/com/{id_card}', 'TableController@renamecom')->name('rename.com');

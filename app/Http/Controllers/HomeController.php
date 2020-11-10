@@ -43,7 +43,6 @@ class HomeController extends Controller
     public function del(Request $request, $table)
     {
         Table::where('id', $table)->delete();
-        // $request->table()->statuses()->findOrFail($tableid)->delete();
         return back();
     }
 

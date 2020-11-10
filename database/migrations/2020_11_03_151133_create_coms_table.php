@@ -15,9 +15,10 @@ class CreateComsTable extends Migration
     {
         Schema::create('coms', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('card_id')->index();
+            $table->bigInteger('card_id')->unsigned();
             $table->string('message');
             $table->timestamps();
+            $table->foreign('card_id')->references('id')->on('cards')->onDelete('cascade');
         });
     }
 
@@ -29,5 +30,6 @@ class CreateComsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('coms');
+        $com->delete('card');
     }
 }

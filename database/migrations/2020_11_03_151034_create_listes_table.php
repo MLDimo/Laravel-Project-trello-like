@@ -17,8 +17,6 @@ class CreateListesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('table_id')->unsigned();
             $table->string('title');
-            // $table->foreign('table_id')->references('id')->on('tables')->onDelete('cascade');
-
             $table->timestamps();
             $table->foreign('table_id')->references('id')->on('tables')->onDelete('cascade');
         });
@@ -32,5 +30,6 @@ class CreateListesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('listes');
+        $liste->delete('table');
     }
 }

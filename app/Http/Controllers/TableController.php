@@ -43,9 +43,9 @@ class TableController extends Controller
         // );
     }
 
-    public function delli(Request $request, $id)
+    public function delli(Request $request, $list)
     {
-        $request->liste()->statuses()->findOrFail($id)->delete();
+        Liste::where('id', $list)->delete();
         return back();
     }
 
@@ -76,9 +76,9 @@ class TableController extends Controller
         // );
     }
 
-    public function delcard(Request $request, $id)
+    public function delcard(Request $request, $card)
     {
-        $request->card()->statuses()->findOrFail($id)->delete();
+        Card::where('id', $card)->delete();
         return back();
     }
 
@@ -102,9 +102,9 @@ class TableController extends Controller
         $com->save();
         return back();
     }
-    public function delcom(Request $request, $id)
+    public function delcom(Request $request, $com)
     {
-        $request->com()->statuses()->findOrFail($id)->delete();
+        Com::where('id', $com)->delete();
         return back();
     }
 

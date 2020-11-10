@@ -26,6 +26,10 @@
             <div class="row">
                 <div class="col">
                     <b><h3> {{ $list_item->title }} </h3></b>
+                    <form method="post" action="@route('del.li',[$list_item->id])">
+                        @csrf
+                        <input type="submit" value="X">
+                        </form>
                 </div>
             </div>
 
@@ -47,14 +51,21 @@
                             </form>
                         </div>
                     </div>
+            @foreach($com as $com_item)
+                    <div class="row">
+                        <div class="col">
+                            <h6> {{ $com_item->message }} </h6>
+                        </div>
+                    </div>
+            @endforeach
                     <div class="row">
                         <div class="col-sm">
-                        <form method="post" action="@route('del.card'),['$listeid'])">
+                        <form method="post" action="@route('del.card',[$card_item->id])">
+                            @csrf
                             <input type="submit" value="x">
                             </form>
-                        </div>
-                        <div class="col-sm">
-                            <form method="post" action="@route('rename.card')">
+                            <form method="post" action="@route('rename.card',[$card_item->id])">
+                                @csrf
                                 <input type="submit" value="ø">
                             </form>
                         </div>

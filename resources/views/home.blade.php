@@ -5,14 +5,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col mld-card">
-                <form  method="post" action="@route('store.table')">
-                    @csrf
-                    <label for="title"><h4> Créer un nouveau Tableau :</h4></label>
-                    <input id="title" name="title" type="text" placeholder="Titre">
-                    <label for="description"><h4> Description :</h4></label>
-                    <input type="text" name="description" id="description">
-                    <input type="submit" value="+">
-                </form>
+            <form  method="post" action="@route('store.table')">
+                @csrf
+                <label for="title"><h4> Créer un nouveau Tableau :</h4></label>
+                <input id="title" name="title" type="text" placeholder="Titre">
+                <label for="description"><h4> Description :</h4></label>
+                <input type="text" name="description" id="description">
+                <input type="submit" value="+">
+            </form>
         </div>
     </div>
 </div>
