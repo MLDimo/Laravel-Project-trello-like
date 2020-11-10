@@ -28,7 +28,7 @@
                     <b><h3> {{ $list_item->title }} </h3></b>
                     <form method="post" action="@route('del.li',[$list_item->id])">
                         @csrf
-                        <input type="submit" value="X">
+                        <input type="submit" value="X li">
                         </form>
                 </div>
             </div>
@@ -52,21 +52,23 @@
                         </div>
                     </div>
             @foreach($com as $com_item)
+            @if($card_item->id == $com_item->card_id)
                     <div class="row">
                         <div class="col">
                             <h6> {{ $com_item->message }} </h6>
                             <form method="post" action="@route('del.com',[$com_item->id])">
                                 @csrf
-                                <input type="submit" value="x">
+                                <input type="submit" value="x com">
                                 </form>
                         </div>
                     </div>
+            @endif
             @endforeach
                     <div class="row">
                         <div class="col-sm">
                         <form method="post" action="@route('del.card',[$card_item->id])">
                             @csrf
-                            <input type="submit" value="x">
+                            <input type="submit" value="x card">
                             </form>
                             <form method="post" action="@route('rename.card',[$card_item->id])">
                                 @csrf
